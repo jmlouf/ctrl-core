@@ -1,0 +1,20 @@
+[
+    {
+        "projectLink": "https://jazzy-nougat-6dcce1.netlify.app/",
+        "githubLink": "https://github.com/brutchley9/react-portfolio/",
+        "description": "My first real foray into the world of front-end web development using REACT",
+        "projectAuthor": "slimshady"
+    },
+    {
+        "projectLink": "https://brutchley9.github.io/bmi-calculator/",
+        "githubLink": "https://github.com/brutchley9/bmi-calculator",
+        "description": "Need a useful healthcare checkup? This is the way.",
+        "projectAuthor": "itsyaboi"
+    },
+    {
+        "projectLink": "https://brutchley9.github.io/password-generator/",
+        "githubLink": "https://github.com/brutchley9/password-generator/",
+        "description": "Looking to create a safe and useful password? This is the way",
+        "projectAuthor": "username_oficianado"
+    }
+]
