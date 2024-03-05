@@ -12,6 +12,7 @@ function showIconBar(){
     navigation.classList.add("hide");
 }
 
+
 function showComment(){
     var commentArea = document.getElementById("comment-area");
     commentArea.classList.remove("hide");
