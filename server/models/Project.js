@@ -16,6 +16,17 @@ const projectSchema = new Schema({
         minlength: 1,
         maxlength: 500,
     },
+    description: {
+        type: String,
+        minlength: 1,
+        maxlength: 500,
+        trim: true,
+    },
+    projectAuthor: {
+        type: String,
+        required: true,
+        trim: true,
+    },
     createdAt: {
         type: Date,
         default: Date.now,
