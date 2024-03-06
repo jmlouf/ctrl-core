@@ -1,0 +1,54 @@
+/* Highlights active navlink. */
+.active {
+    background-color: var(--color-accent);
+}
+
+.navbar {
+    background: var(--color-primary);
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        color: var(--color-accent);
+        font-size: 3rem;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    ul {
+        display: flex;
+    }
+
+    ul li {
+        list-style: none;
+    }
+
+    ul li a {
+        color: var(--color-secondary);
+        display: block;
+        text-decoration: none;
+        margin-left: 3rem;
+        padding: 1.2rem;
+        /* Noticeable when hovering over item. */
+        border-radius: 15px;
+    }
+
+    /* "not" pseudo-selector applies if element does not have ".active" class. */
+    ul li a:not(.active):hover {
+        color: var(--color-accent);
+    }
+
+
+    /* Remove default button style for menu. */
+    button {
+        background: none;
+        border-radius: 15px;
+        border: none;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+    }
+}
