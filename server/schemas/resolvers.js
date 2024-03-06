@@ -9,11 +9,11 @@ const resolvers = {
       user: async (parent, { username }) => {
         return User.findOne({ username }).populate('projects');
       },
-      thoughts: async (parent, { username }) => {
+      projects: async (parent, { username }) => {
         const params = username ? { username } : {};
         return Project.find(params).sort({ createdAt: -1 });
       },
-      thought: async (parent, { projectId }) => {
+      project: async (parent, { projectId }) => {
         return Project.findOne({ _id: projectId });
       },
       me: async (parent, args, context) => {
