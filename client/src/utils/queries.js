@@ -24,7 +24,6 @@ export const QUERY_ME = gql`
       projects {
         _id
         commentText
-        commentAuthor
         createdAt
       }
     }
