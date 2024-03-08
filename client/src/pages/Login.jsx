@@ -59,10 +59,11 @@ const Login = () => {
                 <Link to='/'>back to the homepage.</Link>
               </p>
             ) : (
-              <form onSubmit={handleFormSubmit}>
+              <form id="login-form" onSubmit={handleFormSubmit}>
                 <input
                   className='form-input'
                   placeholder='Enter Email'
+                  id='email-input'
                   name='email'
                   type='email'
                   value={formState.email}
@@ -71,6 +72,7 @@ const Login = () => {
                 <input
                   className='form-input'
                   placeholder='Enter Password'
+                  id='password-input'
                   name='password'
                   type='password'
                   value={formState.password}
@@ -79,6 +81,7 @@ const Login = () => {
                 <button
                   className='btn btn-block btn-primary'
                   style={{ cursor: "pointer" }}
+                  id="login-submit"
                   type='submit'
                 >
                   Submit

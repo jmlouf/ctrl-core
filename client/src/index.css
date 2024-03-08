@@ -38,3 +38,43 @@ h2 {
 h3 {
   font-size: 2.2rem;
 }
+
+h4 {
+  margin-left: 1%;
+  color:darkblue;
+  text-shadow: 1px 1px black;
+}
+
+#username-input {
+  margin: 1%;
+}
+
+#email-input {
+  margin: 1%;
+}
+
+#password-input {
+  margin: 1%;
+}
+
+#signup-form {
+  display: grid;
+  width: 50%;
+}
+
+#signup-submit {
+  margin: 1%;
+  width: 25%;
+  background-color: darkblue;
+  border: blue;
+}
+
+#login-submit {
+  margin: 1%;
+  width: 25%;
+}
+
+#login-form {
+  display: grid;
+  width: 50%;
+}
