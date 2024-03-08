@@ -14,6 +14,8 @@ Fundamentally, a user can view some portfolios, but in order to contribute, one 
 
 <li>https://chakra-ui.com/docs/hooks/</li>
 
+<li>https://getcssscan.com/blog/how-to-remove-underline-from-link-css</li>
+
 ---
 
 ## React + Vite

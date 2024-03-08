@@ -50,7 +50,7 @@ const Signup = () => {
   return (
     <main className='flex-row justify-center mb-4'>
       <div className='col-12 col-lg-10'>
-        <div className='card'>
+        <div id="signup-area" className='card'>
           <h4 className='card-header bg-dark text-light p-2'>Sign Up</h4>
           <div className='card-body'>
             {data ? (
@@ -59,10 +59,11 @@ const Signup = () => {
                 <Link to='/'>back to the homepage.</Link>
               </p>
             ) : (
-              <form onSubmit={handleFormSubmit}>
+              <form id="signup-form" onSubmit={handleFormSubmit}>
                 <input
                   className='form-input'
                   placeholder='Enter Username'
+                  id='username-input'
                   name='username'
                   type='text'
                   value={formState.name}
@@ -71,6 +72,7 @@ const Signup = () => {
                 <input
                   className='form-input'
                   placeholder='Enter Email'
+                  id='email-input'
                   name='email'
                   type='email'
                   value={formState.email}
@@ -79,6 +81,7 @@ const Signup = () => {
                 <input
                   className='form-input'
                   placeholder='Enter Password'
+                  id='password-input'
                   name='password'
                   type='password'
                   value={formState.password}
@@ -87,6 +90,7 @@ const Signup = () => {
                 <button
                   className='btn btn-block btn-primary'
                   style={{ cursor: "pointer" }}
+                  id="signup-submit"
                   type='submit'
                 >
                   Submit
