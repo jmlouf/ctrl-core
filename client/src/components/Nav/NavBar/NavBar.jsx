@@ -12,7 +12,7 @@ function NavBar() {
     <header>
       <nav className='navbar'>
         <h1>
-          <Link to='/'>ctrl-core logo</Link>
+          <Link to='/'>CTRL CORE</Link>
         </h1>
 
         <ul>
