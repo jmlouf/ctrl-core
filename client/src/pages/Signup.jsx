@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
@@ -7,6 +7,8 @@ import { ADD_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
 
 const Signup = () => {
+  const navigate = useNavigate();
+
   // Initialize username, email, and password as empty strings.
   const [formState, setFormState] = useState({
     username: "",
@@ -42,6 +44,10 @@ const Signup = () => {
 
       // Get token from response and pass to Auth.login() to log in the newly registered user.
       Auth.login(data.addUser.token);
+
+      // Navigate to user's profile via username.
+      // TODO: Difference between below and Auth.getProfile().data.username?
+      navigate(`/${data.user.username}`);
     } catch (e) {
       console.error(e);
     }
@@ -54,8 +60,10 @@ const Signup = () => {
         <article className='card-body'>
           {data ? (
             <p>
-              Success! You may now head{" "}
-              <Link to='/'>back to the homepage.</Link>
+              Success!{" "}
+              <Link to={`/${data.user.username}`}>
+                Click here to go to your profile!
+              </Link>
             </p>
           ) : (
             <form onSubmit={handleFormSubmit}>

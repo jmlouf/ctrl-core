@@ -1,62 +1,61 @@
-import { Navigate, useParams } from "react-router-dom";
+import { Link, Navigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
-import SkillsList from "../components/SkillsList";
-import SkillForm from "../components/SkillForm";
+// Socials:
 
-import { QUERY_SINGLE_PROFILE, QUERY_ME } from "../utils/queries";
+import { QUERY_SINGLE_USER } from "../utils/queries";
 
 import Auth from "../utils/auth";
 
 // Display user's profile page.
 const Profile = () => {
-  // Retrieve profileId from URL params.
-  const { profileId } = useParams();
+  // Retrieve username from URL params.
+  const { username } = useParams();
 
-  // Execute QUERY_SINGLE_PROFILE to fetch user's data.
-  // If no profileId in URL params, execute QUERY_ME for logged in user's information.
-  const { loading, data } = useQuery(
-    profileId ? QUERY_SINGLE_PROFILE : QUERY_ME,
-    {
-      variables: { profileId: profileId }
-    }
-  );
+  // Execute QUERY_SINGLE_USER to fetch user's data.
+  const { loading, data } = useQuery(QUERY_SINGLE_USER, {
+    variables: { username }
+  });
 
-  // Assign data?.me (if QUERY_ME executed) or data?.profile (if QUERY_SINGLE_PROFILE executed).
-  const profile = data?.me || data?.profile || {};
+  // Assign data?.user because QUERY_SINGLE_USER is executed.
+  const user = data?.user || {};
 
-  // If user is logged in and profileId matches logged in user's ID, redirect to '/me'.
-  if (Auth.loggedIn() && Auth.getProfile().data._id === profileId) {
-    return <Navigate to={`/${data.username}`} />;
+  // If user is logged in and username matches logged in user's ID, redirect to '/${user?.username}'.
+  // TODO: User options.
+  if (Auth.loggedIn() && Auth.getProfile().data.username === username) {
+    // User logged in and looking at their own profile.
+    // Add edit options here?
+    // return <Navigate to={`/${user?.username}`} />;
   }
 
   if (loading) {
     return <div>Loading...</div>;
   }
 
-  // If no name property, user must be logged in to view profile page.
-  if (!profile?.name) {
+  // If no username property, user must be logged in to view profile page.
+  if (!user?.username) {
     return (
       <h4>
-        You need to be logged in to see your profile page. Use the navigation
-        links above to sign up or log in!
+        <Link to='/login'>Click here to log in</Link> and view your profile
+        page.
       </h4>
     );
   }
 
   return (
     <main>
-      <h2>{profileId ? `${profile.name}'s` : "Your"} socials:</h2>
+      <h2>{username ? `${user.username}'s` : "Your"} socials:</h2>
 
-      {profile.skills?.length > 0 && (
-        <SkillsList
-          skills={profile.skills}
-          isLoggedInUser={!profileId && true}
+      {/* {user.projects?.length > 0 && (
+        <SocialsList
+          projects={user.projects}
+          isLoggedInUser={!username && true}
         />
-      )}
+      )} */}
 
       <div>
-        <SkillForm profileId={profile._id} />
+        {/* <SocialsForm userId={user._id} /> */}
+        Test
       </div>
     </main>
   );

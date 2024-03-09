@@ -30,15 +30,14 @@ class AuthService {
 
   getToken() {
     // Retrieves the user token from localStorage.
-    // Uses key => 'id_token'.
     return localStorage.getItem("id_token");
   }
 
   login(idToken) {
     // Saves user token to localStorage.
-    // Redirects user to root URL ('/').
     localStorage.setItem("id_token", idToken);
 
+    // Redirects user to root URL ('/').
     window.location.assign("/");
   }
 
@@ -46,7 +45,7 @@ class AuthService {
     // Clear user token and profile data from localStorage.
     localStorage.removeItem("id_token");
     // Reload page and reset the state of the application.
-    window.location.assign("/");
+    window.location.reload();
   }
 }
 
