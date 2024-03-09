@@ -50,7 +50,7 @@ var NewComponent = React.createClass({
             <div className="table-row">
               <div className="status"><i className="fa fa-fire" /></div>
               <div className="subjects">
-                <a href>Is learning Python on 2021 worth it?</a>
+                <a href>Is learning Python on 2023 worth it?</a>
                 <br />
                 <span>Started by <b><a href>User</a></b> .</span>
               </div>
@@ -58,7 +58,7 @@ var NewComponent = React.createClass({
                 2 replies <br /> 125 views
               </div>
               <div className="last-reply">
-                Oct 12 2021
+                Oct 12 2023
                 <br />By <b><a href>User</a></b>
               </div>
             </div>
@@ -73,7 +73,7 @@ var NewComponent = React.createClass({
                 2 replies <br /> 125 views
               </div>
               <div className="last-reply">
-                Oct 12 2021
+                Oct 12 2023
                 <br />By <b><a href>User</a></b>
               </div>
             </div>
@@ -88,7 +88,7 @@ var NewComponent = React.createClass({
                 2 replies <br /> 125 views
               </div>
               <div className="last-reply">
-                Oct 12 2021
+                Oct 12 2023
                 <br />By <b><a href>User</a></b>
               </div>
             </div>
@@ -103,7 +103,7 @@ var NewComponent = React.createClass({
                 2 replies <br /> 125 views
               </div>
               <div className="last-reply">
-                Oct 12 2021
+                Oct 12 2023
                 <br />By <b><a href>User</a></b>
               </div>
             </div>
@@ -155,7 +155,7 @@ var NewComponent = React.createClass({
             <div className="table-row">
               <div className="status"><i className="fa fa-fire" /></div>
               <div className="subjects">
-                <a href>Is learning Python on 2021 worth it?</a>
+                <a href>Is learning Python on 2023 worth it?</a>
                 <br />
                 <span>Started by <b><a href>User</a></b> .</span>
               </div>
@@ -163,14 +163,29 @@ var NewComponent = React.createClass({
                 2 replies <br /> 125 views
               </div>
               <div className="last-reply">
-                Oct 12 2021
+                Oct 12 2023
                 <br />By <b><a href>User</a></b>
               </div>
             </div>
             <div className="table-row">
               <div className="status"><i className="fa fa-lock" /></div>
               <div className="subjects">
-                <a href>Is learning Python on 2021 worth it?</a>
+                <a href>Is learning Python on 2023 worth it?</a>
+                <br />
+                <span>Started by <b><a href>User</a></b> .</span>
+              </div>
+              <div className="replies">
+                2 replies <br /> 125 views
+              </div>
+              <div className="last-reply">
+                Oct 12 2023
+                <br />By <b><a href>User</a></b>
+              </div>
+            </div>
+            <div className="table-row">
+              <div className="status"><i className="fa fa-fire" /></div>
+              <div className="subjects">
+                <a href>Is learning Python on 2023 worth it?</a>
                 <br />
                 <span>Started by <b><a href>User</a></b> .</span>
               </div>
@@ -180,14 +195,6 @@ var NewComponent = React.createClass({
               <div className="last-reply">
                 Oct 12 2021
                 <br />By <b><a href>User</a></b>
-              </div>
-            </div>
-            <div className="table-row">
-              <div className="status"><i className="fa fa-fire" /></div>
-              <div className="subjects">
-                <a href>Is learning Python on 2021 worth it?</a>
-                <br />
-                <span>Started by <b><a href>User</a></b> .</span>
               </div>
               </div>
               </div></>
