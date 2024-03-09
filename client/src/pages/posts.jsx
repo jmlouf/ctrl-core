@@ -20,8 +20,26 @@ var NewComponent = React.createClass({
                                 <li className="nav-item"><a href="detail.html">Detail</a></li>
                             </ul>
                         </nav>
-                    </div>
-                </header></>
+                        <a className="bar-icon" id="iconBar" onclick="hideIconBar()"><i className="fa fa-bars" /></a>
+            <div className="brand">My Forum</div>
+          </div>
+          <div className="search-box">
+            <div>
+              <select name id>
+                <option value="Everything">Everything</option>
+                <option value="Titles">Titles</option>
+                <option value="Descriptions">Descriptions</option>
+              </select>
+              <input type="text" name="q" placeholder="search ..." />
+              <button><i className="fa fa-search" /></button>
+            </div>
+          </div>
+        </header>
+        <div className="container">
+          <div className="navigate">
+            <span><a href>MyForum - Forums</a> &gt;&gt; <a href>random subforum</a></span>
+          </div>
+          </div></>
 
         );
     }
