@@ -34,6 +34,9 @@ function NavBar() {
           ) : (
             <>
               <li>
+                <Link to='/images'>Images</Link>
+              </li>
+              <li>
                 <Link to='/login'>Login</Link>
               </li>
               <li>
