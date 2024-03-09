@@ -39,7 +39,158 @@ var NewComponent = React.createClass({
           <div className="navigate">
             <span><a href>MyForum - Forums</a> &gt;&gt; <a href>random subforum</a></span>
           </div>
-          </div></>
+          </div>
+          <div className="posts-table">
+            <div className="table-head">
+              <div className="status">Status</div>
+              <div className="subjects">Subjects</div>
+              <div className="replies">Replies/Views</div>
+              <div className="last-reply">Last Reply</div>
+            </div>
+            <div className="table-row">
+              <div className="status"><i className="fa fa-fire" /></div>
+              <div className="subjects">
+                <a href>Is learning Python on 2021 worth it?</a>
+                <br />
+                <span>Started by <b><a href>User</a></b> .</span>
+              </div>
+              <div className="replies">
+                2 replies <br /> 125 views
+              </div>
+              <div className="last-reply">
+                Oct 12 2021
+                <br />By <b><a href>User</a></b>
+              </div>
+            </div>
+            <div className="table-row">
+              <div className="status"><i className="fa fa-fire" /></div>
+              <div className="subjects">
+                <a href>Is learning Python on 2023 worth it?</a>
+                <br />
+                <span>Started by <b><a href>User</a></b> .</span>
+              </div>
+              <div className="replies">
+                2 replies <br /> 125 views
+              </div>
+              <div className="last-reply">
+                Oct 12 2021
+                <br />By <b><a href>User</a></b>
+              </div>
+            </div>
+            <div className="table-row">
+              <div className="status"><i className="fa fa-fire" /></div>
+              <div className="subjects">
+                <a href>Is learning Python on 2023 worth it?</a>
+                <br />
+                <span>Started by <b><a href>User</a></b> .</span>
+              </div>
+              <div className="replies">
+                2 replies <br /> 125 views
+              </div>
+              <div className="last-reply">
+                Oct 12 2021
+                <br />By <b><a href>User</a></b>
+              </div>
+            </div>
+            <div className="table-row">
+              <div className="status"><i className="fa fa-book" /></div>
+              <div className="subjects">
+                <a href>Is learning Python on 2023 worth it?</a>
+                <br />
+                <span>Started by <b><a href>User</a></b> .</span>
+              </div>
+              <div className="replies">
+                2 replies <br /> 125 views
+              </div>
+              <div className="last-reply">
+                Oct 12 2021
+                <br />By <b><a href>User</a></b>
+              </div>
+            </div>
+            <div className="table-row">
+              <div className="status"><i className="fa fa-rocket" /></div>
+              <div className="subjects">
+                <a href>Is learning Python on 2023 worth it?</a>
+                <br />
+                <span>Started by <b><a href>User</a></b> .</span>
+              </div>
+              <div className="replies">
+                2 replies <br /> 125 views
+              </div>
+              <div className="last-reply">
+                Oct 12 2023
+                <br />By <b><a href>User</a></b>
+              </div>
+            </div>
+            <div className="table-row">
+              <div className="status"><i className="fa fa-frown-o" /></div>
+              <div className="subjects">
+                <a href>Is learning Python on 2023 worth it?</a>
+                <br />
+                <span>Started by <b><a href>User</a></b> .</span>
+              </div>
+              <div className="replies">
+                2 replies <br /> 125 views
+              </div>
+              <div className="last-reply">
+                Oct 12 2023
+                <br />By <b><a href>User</a></b>
+              </div>
+            </div>
+            <div className="table-row">
+              <div className="status"><i className="fa fa-fire" /></div>
+              <div className="subjects">
+                <a href>Is learning Python on 2023 worth it?</a>
+                <br />
+                <span>Started by <b><a href>User</a></b> .</span>
+              </div>
+              <div className="replies">
+                2 replies <br /> 125 views
+              </div>
+              <div className="last-reply">
+                Oct 12 2023
+                <br />By <b><a href>User</a></b>
+              </div>
+            </div>
+            <div className="table-row">
+              <div className="status"><i className="fa fa-fire" /></div>
+              <div className="subjects">
+                <a href>Is learning Python on 2021 worth it?</a>
+                <br />
+                <span>Started by <b><a href>User</a></b> .</span>
+              </div>
+              <div className="replies">
+                2 replies <br /> 125 views
+              </div>
+              <div className="last-reply">
+                Oct 12 2021
+                <br />By <b><a href>User</a></b>
+              </div>
+            </div>
+            <div className="table-row">
+              <div className="status"><i className="fa fa-lock" /></div>
+              <div className="subjects">
+                <a href>Is learning Python on 2021 worth it?</a>
+                <br />
+                <span>Started by <b><a href>User</a></b> .</span>
+              </div>
+              <div className="replies">
+                2 replies <br /> 125 views
+              </div>
+              <div className="last-reply">
+                Oct 12 2021
+                <br />By <b><a href>User</a></b>
+              </div>
+            </div>
+            <div className="table-row">
+              <div className="status"><i className="fa fa-fire" /></div>
+              <div className="subjects">
+                <a href>Is learning Python on 2021 worth it?</a>
+                <br />
+                <span>Started by <b><a href>User</a></b> .</span>
+              </div>
+              </div>
+              </div></>
 
         );
     }
