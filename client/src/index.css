@@ -122,3 +122,41 @@ h4 {
   height: 50%;
   width: 50%;
 }
+
+#upload-area {
+  display: grid;
+}
+
+#browse-button {
+  margin: 1%;
+  width: 30%;
+  background-color:darkblue;
+  border: azure;
+  border-style: solid;
+  color: azure;
+  font-family: monospace;
+  border-radius: 5px;
+}
+
+#upload-button {
+  margin: 1%;
+  width: 30%;
+  background-color:darkblue;
+  border: azure;
+  border-style: solid;
+  color: azure;
+  font-family: monospace;
+  border-radius: 5px;
+}
+
+#image-list {
+  display: grid;
+}
+
+#image-uploads {
+  width: 300px;
+  margin: 10px;
+  border: 2px;
+  border-color: black;
+  border-style: solid;
+}
