@@ -8,6 +8,8 @@ import NotFound from "./pages/NotFound.jsx";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Profile from "./pages/Profile";
+import Images from "./pages/Images";
+
 
 const router = createBrowserRouter([
   {
@@ -18,6 +20,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />
+      },
+      {
+        path: "/images",
+        element: <Images />
       },
       {
         path: "/login",
