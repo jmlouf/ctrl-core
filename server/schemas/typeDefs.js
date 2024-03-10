@@ -34,12 +34,12 @@ const typeDefs = `
         user(username: String!): User
         projects(username: String): [Project]
         project(projectId: ID!): Project
-        me: User
     }
 
     type Mutation {
         addUser(username: String!, email: String!, password: String!): Auth
         login(email: String!, password: String!): Auth
+        
         addProject(projectLink: String!, githubLink: String!, description: String!): Project
         addComment(projectId: ID!, commentText: String!): Project
         removeProject(projectId: ID!): Project
