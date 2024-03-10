@@ -44,17 +44,12 @@ const Signup = () => {
 
       // Get token from response and pass to Auth.login() to log in the newly registered user.
       Auth.login(data.addUser.token);
-
-      // Navigate to user's profile via username.
-      // TODO: Difference between below and Auth.getProfile().data.username?
-      navigate(`/${data.user.username}`);
     } catch (e) {
       console.error(e);
     }
   };
 
   return (
-
     <main>
       <section className='card'>
         <h4 className='card-header bg-dark text-light p-2'>Sign Up</h4>
@@ -101,57 +96,6 @@ const Signup = () => {
               </button>
             </form>
           )}
-          
-    <main className='flex-row justify-center mb-4'>
-      <div className='col-12 col-lg-10'>
-        <div id="signup-area" className='card'>
-          <h4 className='card-header bg-dark text-light p-2'>Sign Up</h4>
-          <div className='card-body'>
-            {data ? (
-              <p>
-                Success! You may now head{" "}
-                <Link to='/'>back to the homepage.</Link>
-              </p>
-            ) : (
-              <form id="signup-form" onSubmit={handleFormSubmit}>
-                <input
-                  className='form-input'
-                  placeholder='Enter Username'
-                  id='username-input'
-                  name='username'
-                  type='text'
-                  value={formState.name}
-                  onChange={handleChange}
-                />
-                <input
-                  className='form-input'
-                  placeholder='Enter Email'
-                  id='email-input'
-                  name='email'
-                  type='email'
-                  value={formState.email}
-                  onChange={handleChange}
-                />
-                <input
-                  className='form-input'
-                  placeholder='Enter Password'
-                  id='password-input'
-                  name='password'
-                  type='password'
-                  value={formState.password}
-                  onChange={handleChange}
-                />
-                <button
-                  className='btn btn-block btn-primary'
-                  style={{ cursor: "pointer" }}
-                  id="signup-submit"
-                  type='submit'
-                >
-                  Submit
-                </button>
-              </form>
-            )}
-
 
           {error && (
             <div className='my-3 p-3 bg-danger text-white'>{error.message}</div>
