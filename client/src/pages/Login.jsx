@@ -49,7 +49,7 @@ const Login = () => {
 
   return (
     <main>
-      <section className='card'>
+      <section id="login-area"className='card'>
         <h4 className='card-header bg-dark text-light p-2'>Login</h4>
         <article className='card-body'>
           {data ? (
@@ -58,12 +58,13 @@ const Login = () => {
               <Link to='/'>back to the homepage.</Link>
             </p>
           ) : (
-            <form onSubmit={handleFormSubmit}>
+            <form id="login-form" onSubmit={handleFormSubmit}>
               <input
                 className='form-input'
                 placeholder='Enter Email'
                 name='email'
                 type='email'
+                id="email-input"
                 value={formState.email}
                 onChange={handleChange}
               />
@@ -72,6 +73,7 @@ const Login = () => {
                 placeholder='Enter Password'
                 name='password'
                 type='password'
+                id="password-input"
                 value={formState.password}
                 onChange={handleChange}
               />
@@ -79,6 +81,7 @@ const Login = () => {
                 className='btn btn-block btn-primary'
                 style={{ cursor: "pointer" }}
                 type='submit'
+                id="login-submit"
               >
                 Submit
               </button>

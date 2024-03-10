@@ -29,7 +29,9 @@ const Images = () => {
         })
     }, []);
 
-    return <div className='container'>
+    return <div id="images-page" className='container'>
+        <h4>Webpage Screenshots Forum</h4>
+        <p id="desc">It's time to show off your completed front end experience! On this page, users have the opportunity to display screenshots of their stylized projects and portfolios. Browse for an image you want to share, then hit "Upload Image". Image database powered by firebase.google.com</p>
         <div id="upload-area">
             <input type="file" id="browse-button" onChange={(event) => {setImageUpload(event.target.files[0])}}></input>
             <button id="upload-button" onClick={uploadImage}>Upload Image</button>

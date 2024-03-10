@@ -51,7 +51,8 @@ const Signup = () => {
 
   return (
     <main>
-      <section className='card'>
+      <section id="signup-area" className='card'>
+      <p id="desc">Welcome to CTRL Core! Please take a moment to sign up so that you can experience all the site has to offer! Share your portfolio, projects, images and more!</p>
         <h4 className='card-header bg-dark text-light p-2'>Sign Up</h4>
         <article className='card-body'>
           {data ? (
@@ -62,12 +63,13 @@ const Signup = () => {
               </Link>
             </p>
           ) : (
-            <form onSubmit={handleFormSubmit}>
+            <form id="signup-form" onSubmit={handleFormSubmit}>
               <input
                 className='form-input'
                 placeholder='Enter Username'
                 name='username'
                 type='text'
+                id="username-input"
                 value={formState.name}
                 onChange={handleChange}
               />
@@ -76,6 +78,7 @@ const Signup = () => {
                 placeholder='Enter Email'
                 name='email'
                 type='email'
+                id="email-input"
                 value={formState.email}
                 onChange={handleChange}
               />
@@ -84,6 +87,7 @@ const Signup = () => {
                 placeholder='Enter Password'
                 name='password'
                 type='password'
+                id="password-input"
                 value={formState.password}
                 onChange={handleChange}
               />
@@ -91,6 +95,7 @@ const Signup = () => {
                 className='btn btn-block btn-primary'
                 style={{ cursor: "pointer" }}
                 type='submit'
+                id="signup-submit"
               >
                 Submit
               </button>

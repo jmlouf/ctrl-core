@@ -149,14 +149,45 @@ h4 {
   border-radius: 5px;
 }
 
+#desc {
+  max-width: 500px;
+  background-color: aliceblue;
+  margin: 1%;
+  margin-left: 2%;
+  font-size: small;
+  font-family: monospace;
+  border: 2px;
+  border-color: black;
+  border-style: solid;
+  padding: 1%;
+}
+
 #image-list {
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
 }
 
 #image-uploads {
-  width: 300px;
+  width: 350px;
   margin: 10px;
   border: 2px;
   border-color: black;
   border-style: solid;
+}
+
+@media screen and (max-width: 750px) {
+  #image-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  #image-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1px;
+  }
 }

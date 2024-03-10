@@ -4,6 +4,16 @@ Developers need a way not only to create, but to collaborate and share what they
 
 Fundamentally, a user can view some portfolios, but in order to contribute, one must log in first and create a sessions with web tokens in order to upload portoflios, links, screenshots, or comments on the work of other users. A secondary goal we could implement would in fact be the ability to upload these screenshots (if we can establish that functionality for the app), as well as a possible donation system utilizing Stripe. We also would like to implement styling with the help of Chakra UI, along with a storage utility for storing and uploading webpage screenshots called Firebase.
 
+Webpage Link: https://ctrl-core-main-1d9d74a238b6.herokuapp.com/
+
+GitHub Repository Link: https://github.com/jmlouf/ctrl-core
+
+---
+
+## Screenshot
+
+<img src="client/src/assets/ctrlcorescreenshot.png">
+
 ---
 
 ## Resources
