@@ -27,8 +27,13 @@ body {
   background-color: var(--color-accent);
 }
   
+li {
+  font-family: monospace;
+}
+
 h1 {
   font-size: 5.2rem;
+  font-family: monospace;
 }
   
 h2 {
@@ -37,4 +42,152 @@ h2 {
   
 h3 {
   font-size: 2.2rem;
+}
+
+h4 {
+  margin-left: 1%;
+  font-size: 2.2rem;
+  margin-bottom: 5px;
+  color:darkblue;
+  text-shadow: 0 0 3px azure;
+}
+
+
+#signup-area {
+  margin: 2%;
+}
+
+#login-area{
+  margin: 2%;
+}
+
+#username-input {
+  height: 75%;
+  margin: 1%;
+  margin-left: 2%;
+  font-family: monospace;
+}
+
+#email-input {
+  height: 75%;
+  margin: 1%;
+  margin-left: 2%;
+  font-family: monospace;
+}
+
+#password-input {
+  height: 75%;
+  margin: 1%;
+  margin-left: 2%;
+  font-family: monospace;
+}
+
+#signup-form {
+  display: grid;
+  width: 50%;
+  font-family: monospace;
+}
+
+#signup-submit {
+  margin: 1%;
+  width: 25%;
+  height: 75%;
+  background-color:darkblue;
+  border: azure;
+  border-style: solid;
+  color: azure;
+  font-family: monospace;
+  border-radius: 5px;
+}
+
+#login-submit {
+  margin: 1%;
+  width: 25%;
+  height: 75%;
+  background-color:darkblue;
+  border: azure;
+  border-style: solid;
+  color: azure;
+  font-family: monospace;
+  border-radius: 5px;
+}
+
+#login-form {
+  display: grid;
+  width: 50%;
+}
+
+#backdrop {
+  background-color: #130F26;
+  height: 50%;
+  width: 50%;
+}
+
+#upload-area {
+  display: grid;
+}
+
+#browse-button {
+  margin: 1%;
+  width: 30%;
+  background-color:darkblue;
+  border: azure;
+  border-style: solid;
+  color: azure;
+  font-family: monospace;
+  border-radius: 5px;
+}
+
+#upload-button {
+  margin: 1%;
+  width: 30%;
+  background-color:darkblue;
+  border: azure;
+  border-style: solid;
+  color: azure;
+  font-family: monospace;
+  border-radius: 5px;
+}
+
+#desc {
+  max-width: 500px;
+  background-color: aliceblue;
+  margin: 1%;
+  margin-left: 2%;
+  font-size: small;
+  font-family: monospace;
+  border: 2px;
+  border-color: black;
+  border-style: solid;
+  padding: 1%;
+}
+
+#image-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+}
+
+#image-uploads {
+  width: 350px;
+  margin: 10px;
+  border: 2px;
+  border-color: black;
+  border-style: solid;
+}
+
+@media screen and (max-width: 750px) {
+  #image-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  #image-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1px;
+  }
 }

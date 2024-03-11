@@ -15,12 +15,6 @@ const resolvers = {
     },
     project: async (parent, { projectId }) => {
       return Project.findOne({ _id: projectId });
-    },
-    me: async (parent, args, context) => {
-      if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate("projects");
-      }
-      throw AuthenticationError;
     }
   },
 

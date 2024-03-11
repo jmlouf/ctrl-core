@@ -12,7 +12,7 @@ function NavBar() {
     <header>
       <nav className='navbar'>
         <h1>
-          <Link to='/'>ctrl-core logo</Link>
+          <Link to='/'>CTRL CORE</Link>
         </h1>
 
         <ul>
@@ -22,7 +22,7 @@ function NavBar() {
           {Auth.loggedIn() ? (
             <>
               <li>
-                <Link to='/'>
+                <Link to={`/${Auth.getProfile().data.username}`}>
                   {/* Run the getProfile() method to get access to the unencrypted token value in order to retrieve the user's username  */}
                   {Auth.getProfile().data.username}&apos;s profile
                 </Link>
@@ -33,6 +33,9 @@ function NavBar() {
             </>
           ) : (
             <>
+              <li>
+                <Link to='/images'>Images</Link>
+              </li>
               <li>
                 <Link to='/login'>Login</Link>
               </li>
