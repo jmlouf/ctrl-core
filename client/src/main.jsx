@@ -7,7 +7,7 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound.jsx";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import forums from "./pages/Forums";
+import Forums from "./pages/Forums";
 import Profile from "./pages/Profile";
 import Images from "./pages/Images";
 
