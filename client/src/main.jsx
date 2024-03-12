@@ -9,11 +9,11 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound.jsx";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import Forums from "./pages/Forums";
+//import Forums from "./pages/Forums";
 import Profile from "./pages/Profile";
 import Images from "./pages/Images";
-import Posts from "./pages/posts";
-import Details from "./pages/Details";
+//import Posts from "./pages/posts";
+//import Details from "./pages/Details";
 
 const router = createBrowserRouter([
   {
@@ -28,18 +28,6 @@ const router = createBrowserRouter([
       {
         path: "/images",
         element: <Images />
-      },
-      {
-        path: "/forums",
-        element: <Forums />
-      },
-      {
-        path: "/posts",
-        element: <Posts />
-      },
-      {
-        path: "/details",
-        element: <Details />
       },
       {
         path: "/login",

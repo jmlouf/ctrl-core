@@ -224,7 +224,7 @@ const Forums = () => ({
                 <footer>
                 </footer>
               </div></div></div></div>
-      );
+      </div>);
     }
 });
 
