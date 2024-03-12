@@ -56,10 +56,7 @@ const Signup = () => {
         <article className='card-body'>
           {data ? (
             <p>
-              Success!{" "}
-              <Link to={`/${data.user.username}`}>
-                Click here to go to your profile!
-              </Link>
+              Success! <Link to={`/`}>Click here to go to the homepage!</Link>
             </p>
           ) : (
             <form onSubmit={handleFormSubmit}>

@@ -1,5 +1,7 @@
+import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { ChakraProvider } from "@chakra-ui/react";
 import "./index.css";
 
 import App from "./App.jsx";
@@ -9,7 +11,6 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Profile from "./pages/Profile";
 import Images from "./pages/Images";
-
 
 const router = createBrowserRouter([
   {
@@ -34,10 +35,7 @@ const router = createBrowserRouter([
         element: <Signup />
       },
       {
-        path: "/profiles/:username",
-        element: <Profile />
-      },
-      {
+        // '/me'
         path: "/:username",
         element: <Profile />
       }
@@ -46,5 +44,7 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+  <ChakraProvider>
+    <RouterProvider router={router} />
+  </ChakraProvider>
 );

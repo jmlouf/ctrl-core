@@ -25,7 +25,48 @@ const userSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: "Project"
     }
-  ]
+  ],
+  socials: {
+    linkedinLink: {
+      type: String,
+      maxlength: 500
+    },
+    githubLink: {
+      type: String,
+      maxlength: 500
+    },
+    instagramLink: {
+      type: String,
+      maxlength: 500
+    },
+    websiteLink: {
+      type: String,
+      maxlength: 500
+    },
+    twitterLink: {
+      type: String,
+      maxlength: 500
+    }
+  },
+  avatar: {
+    type: String,
+    default: ""
+  },
+  portfolio: {
+    portfolioLink: {
+      type: String,
+      default: ""
+    },
+    portfolioImage: {
+      type: String,
+      default: ""
+    },
+    portfolioLanguages: [String],
+    averagePortfolioRating: {
+      type: Number,
+      default: 0
+    }
+  }
 });
 
 userSchema.pre("save", async function (next) {
