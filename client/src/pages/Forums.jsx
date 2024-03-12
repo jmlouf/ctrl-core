@@ -228,4 +228,6 @@ const Forums = () => ({
               </div></div></div></div>
       );
     }
-  });
+});
+
+export default Forums;
