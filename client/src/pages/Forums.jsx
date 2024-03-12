@@ -1,40 +1,59 @@
+import Posts from "../pages/posts";
+import Details from "../pages/Details";
+
 const Forums = () => ({
-    render: function() {
-      return (
-        <div>
-          <meta charSet="UTF-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <title>Forum</title>
-          <link rel="stylesheet" href="style.css" />
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
-          <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital@1&display=swap" rel="stylesheet" />
-          <header>
-            <div className="navbar">
-              <nav className="navigation hide" id="navigation">
-                <span className="close-icon" id="close-icon" onclick="showIconBar()"><i className="fa fa-close" /></span>
-                <ul className="nav-list">
-                  <li className="nav-item"><a href="forums.html">Forums</a></li>
-                  <li className="nav-item"><a href="posts.html">Posts</a></li>
-                  <li className="nav-item"><a href="detail.html">Detail</a></li>
-                </ul>
-              </nav>
-              <a className="bar-icon" id="iconBar" onclick="hideIconBar()"><i className="fa fa-bars" /></a>
-              <div className="brand">My Forum</div>
+  render: function () {
+    return (
+      <div>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Forum</title>
+        <header>
+          <div className="navbar">
+            <nav className="navigation hide" id="navigation">
+              <span className="close-icon" id="close-icon" onclick="showIconBar()"><i className="fa fa-close" /></span>
+              <ul className="nav-list">
+                <li className="nav-item"><Forums /></li>
+                <li className="nav-item"><Posts /></li>
+                <li className="nav-item"><Details /></li>
+              </ul>
+            </nav>
+            <a className="bar-icon" id="iconBar" onclick="hideIconBar()"><i className="fa fa-bars" /></a>
+            <div className="brand">My Forum</div>
+          </div>
+          <div className="search-box">
+            <div>
+              <select name id>
+                <option value="Everything">Everything</option>
+                <option value="Titles">Titles</option>
+                <option value="Descriptions">Descriptions</option>
+              </select>
+              <input type="text" name="q" placeholder="search ..." />
+              <button><i className="fa fa-search" /></button>
             </div>
-            <div className="search-box">
-              <div>
-                <select name id>
-                  <option value="Everything">Everything</option>
-                  <option value="Titles">Titles</option>
-                  <option value="Descriptions">Descriptions</option>
-                </select>
-                <input type="text" name="q" placeholder="search ..." />
-                <button><i className="fa fa-search" /></button>
+          </div>
+        </header>
+        <div className="container">
+          <div className="subforum">
+            <div className="subforum-title">
+              <h1>General Information</h1>
+            </div>
+            <div className="subforum-row">
+              <div className="subforum-icon subforum-column center">
+                <i className="fa fa-car center" />
+              </div>
+              <div className="subforum-description subforum-column">
+                <h4><a href="#">Description Title</a></h4>
+                <p>Description Content: Connect, Code, Conquer with CTRL-Core</p>
+              </div>
+              <div className="subforum-stats subforum-column center">
+                <span>24 Posts | 12 Topics</span>
+              </div>
+              <div className="subforum-info subforum-column">
+                <b><a href>Last post</a></b> by <a href>JustAUser</a>
+                <br />on <small>12 Dec 2023</small>
               </div>
             </div>
-          </header>
-          <div className="container">
             <div className="subforum">
               <div className="subforum-title">
                 <h1>General Information</h1>
@@ -55,99 +74,112 @@ const Forums = () => ({
                   <br />on <small>12 Dec 2023</small>
                 </div>
               </div>
-              <div className="subforum">
-                <div className="subforum-title">
-                  <h1>General Information</h1>
+              <hr className="subforum-devider" />
+              <div className="subforum-row">
+                <div className="subforum-icon subforum-column center">
+                  <i className="fa fa-car center" />
                 </div>
-                <div className="subforum-row">
-                  <div className="subforum-icon subforum-column center">
-                    <i className="fa fa-car center" />
-                  </div>
-                  <div className="subforum-description subforum-column">
-                    <h4><a href="#">Description Title</a></h4>
-                    <p>Description Content: Connect, Code, Conquer with CTRL-Core</p>
-                  </div>
-                  <div className="subforum-stats subforum-column center">
-                    <span>24 Posts | 12 Topics</span>
-                  </div>
-                  <div className="subforum-info subforum-column">
-                    <b><a href>Last post</a></b> by <a href>JustAUser</a>
-                    <br />on <small>12 Dec 2023</small>
-                  </div>
+                <div className="subforum-description subforum-column">
+                  <h4><a href="#">Description Title</a></h4>
+                  <p>Description Content: Connect, Code, Conquer with CTRL-Core</p>
                 </div>
-                <hr className="subforum-devider" />
-                <div className="subforum-row">
-                  <div className="subforum-icon subforum-column center">
-                    <i className="fa fa-car center" />
-                  </div>
-                  <div className="subforum-description subforum-column">
-                    <h4><a href="#">Description Title</a></h4>
-                    <p>Description Content: Connect, Code, Conquer with CTRL-Core</p>
-                  </div>
-                  <div className="subforum-stats subforum-column center">
-                    <span>24 Posts | 12 Topics</span>
-                  </div>
-                  <div className="subforum-info subforum-column">
-                    <b><a href>Last post</a></b> by <a href>JustAUser</a>
-                    <br />on <small>12 Dec 2023</small>
-                  </div>
+                <div className="subforum-stats subforum-column center">
+                  <span>24 Posts | 12 Topics</span>
                 </div>
-                <hr className="subforum-devider" />
-                <div className="subforum-row">
-                  <div className="subforum-icon subforum-column center">
-                    <i className="fa fa-car center" />
-                  </div>
-                  <div className="subforum-description subforum-column">
-                    <h4><a href="#">Description Title</a></h4>
-                    <p>Description Content: Connect, Code, Conquer with CTRL-Core</p>
-                  </div>
-                  <div className="subforum-stats subforum-column center">
-                    <span>24 Posts | 12 Topics</span>
-                  </div>
-                  <div className="subforum-info subforum-column">
-                    <b><a href>Last post</a></b> by <a href>JustAUser</a>
-                    <br />on <small>12 Dec 2023</small>
-                  </div>
-                </div>
-                <hr className="subforum-devider" />
-                <div className="subforum-row">
-                  <div className="subforum-icon subforum-column center">
-                    <i className="fa fa-car center" />
-                  </div>
-                  <div className="subforum-description subforum-column">
-                    <h4><a href="#">Description Title</a></h4>
-                    <p>Description Content: Connect, Code, Conquer with CTRL-Core</p>
-                  </div>
-                  <div className="subforum-stats subforum-column center">
-                    <span>24 Posts | 12 Topics</span>
-                  </div>
-                  <div className="subforum-info subforum-column">
-                    <b><a href>Last post</a></b> by <a href>JustAUser</a>
-                    <br />on <small>12 Dec 2023</small>
-                  </div>
-                </div>
-                <hr className="subforum-devider" />
-                <div className="subforum-row">
-                  <div className="subforum-icon subforum-column center">
-                    <i className="fa fa-car center" />
-                  </div>
-                  <div className="subforum-description subforum-column">
-                    <h4><a href="#">Description Title</a></h4>
-                    <p>Description Content: Connect, Code, Conquer with CTRL-Core</p>
-                  </div>
-                  <div className="subforum-stats subforum-column center">
-                    <span>24 Posts | 12 Topics</span>
-                  </div>
-                  <div className="subforum-info subforum-column">
-                    <b><a href>Last post</a></b> by <a href>JustAUser</a>
-                    <br />on <small>12 Dec 2023</small>
-                  </div>
+                <div className="subforum-info subforum-column">
+                  <b><a href>Last post</a></b> by <a href>JustAUser</a>
+                  <br />on <small>12 Dec 2023</small>
                 </div>
               </div>
-              <div className="subforum">
-                <div className="subforum-title">
-                  <h1>General Information</h1>
+              <hr className="subforum-devider" />
+              <div className="subforum-row">
+                <div className="subforum-icon subforum-column center">
+                  <i className="fa fa-car center" />
                 </div>
+                <div className="subforum-description subforum-column">
+                  <h4><a href="#">Description Title</a></h4>
+                  <p>Description Content: Connect, Code, Conquer with CTRL-Core</p>
+                </div>
+                <div className="subforum-stats subforum-column center">
+                  <span>24 Posts | 12 Topics</span>
+                </div>
+                <div className="subforum-info subforum-column">
+                  <b><a href>Last post</a></b> by <a href>JustAUser</a>
+                  <br />on <small>12 Dec 2023</small>
+                </div>
+              </div>
+              <hr className="subforum-devider" />
+              <div className="subforum-row">
+                <div className="subforum-icon subforum-column center">
+                  <i className="fa fa-car center" />
+                </div>
+                <div className="subforum-description subforum-column">
+                  <h4><a href="#">Description Title</a></h4>
+                  <p>Description Content: Connect, Code, Conquer with CTRL-Core</p>
+                </div>
+                <div className="subforum-stats subforum-column center">
+                  <span>24 Posts | 12 Topics</span>
+                </div>
+                <div className="subforum-info subforum-column">
+                  <b><a href>Last post</a></b> by <a href>JustAUser</a>
+                  <br />on <small>12 Dec 2023</small>
+                </div>
+              </div>
+              <hr className="subforum-devider" />
+              <div className="subforum-row">
+                <div className="subforum-icon subforum-column center">
+                  <i className="fa fa-car center" />
+                </div>
+                <div className="subforum-description subforum-column">
+                  <h4><a href="#">Description Title</a></h4>
+                  <p>Description Content: Connect, Code, Conquer with CTRL-Core</p>
+                </div>
+                <div className="subforum-stats subforum-column center">
+                  <span>24 Posts | 12 Topics</span>
+                </div>
+                <div className="subforum-info subforum-column">
+                  <b><a href>Last post</a></b> by <a href>JustAUser</a>
+                  <br />on <small>12 Dec 2023</small>
+                </div>
+              </div>
+            </div>
+            <div className="subforum">
+              <div className="subforum-title">
+                <h1>General Information</h1>
+              </div>
+              <div className="subforum-row">
+                <div className="subforum-icon subforum-column center">
+                  <i className="fa fa-car center" />
+                </div>
+                <div className="subforum-description subforum-column">
+                  <h4><a href="#">Description Title</a></h4>
+                  <p>Description Content: Connect, Code, Conquer with CTRL-Core</p>
+                </div>
+                <div className="subforum-stats subforum-column center">
+                  <span>24 Posts | 12 Topics</span>
+                </div>
+                <div className="subforum-info subforum-column">
+                  <b><a href>Last post</a></b> by <a href>JustAUser</a>
+                  <br />on <small>12 Dec 2023</small>
+                </div>
+              </div>
+              <hr className="subforum-devider" />
+              <div className="subforum-row">
+                <div className="subforum-icon subforum-column center">
+                  <i className="fa fa-car center" />
+                </div>
+                <div className="subforum-description subforum-column">
+                  <h4><a href="#">Description Title</a></h4>
+                  <p>Description Content: Connect, Code, Conquer with CTRL-Core </p>
+                </div>
+                <div className="subforum-stats subforum-column center">
+                  <span>24 Posts | 12 Topics</span>
+                </div>
+                <div className="subforum-info subforum-column">
+                  <b><a href>Last post</a></b> by <a href>JustAUser</a>
+                  <br />on <small>12 Dec 2023</small>
+                </div>
+                <hr className="subforum-devider" />
                 <div className="subforum-row">
                   <div className="subforum-icon subforum-column center">
                     <i className="fa fa-car center" />
@@ -171,7 +203,7 @@ const Forums = () => ({
                   </div>
                   <div className="subforum-description subforum-column">
                     <h4><a href="#">Description Title</a></h4>
-                    <p>Description Content: Connect, Code, Conquer with CTRL-Core </p>
+                    <p>Description Content: Connect, Code, Conquer with CTRL-Core</p>
                   </div>
                   <div className="subforum-stats subforum-column center">
                     <span>24 Posts | 12 Topics</span>
@@ -179,40 +211,6 @@ const Forums = () => ({
                   <div className="subforum-info subforum-column">
                     <b><a href>Last post</a></b> by <a href>JustAUser</a>
                     <br />on <small>12 Dec 2023</small>
-                  </div>
-                  <hr className="subforum-devider" />
-                  <div className="subforum-row">
-                    <div className="subforum-icon subforum-column center">
-                      <i className="fa fa-car center" />
-                    </div>
-                    <div className="subforum-description subforum-column">
-                      <h4><a href="#">Description Title</a></h4>
-                      <p>Description Content: Connect, Code, Conquer with CTRL-Core</p>
-                    </div>
-                    <div className="subforum-stats subforum-column center">
-                      <span>24 Posts | 12 Topics</span>
-                    </div>
-                    <div className="subforum-info subforum-column">
-                      <b><a href>Last post</a></b> by <a href>JustAUser</a>
-                      <br />on <small>12 Dec 2023</small>
-                    </div>
-                  </div>
-                  <hr className="subforum-devider" />
-                  <div className="subforum-row">
-                    <div className="subforum-icon subforum-column center">
-                      <i className="fa fa-car center" />
-                    </div>
-                    <div className="subforum-description subforum-column">
-                      <h4><a href="#">Description Title</a></h4>
-                      <p>Description Content: Connect, Code, Conquer with CTRL-Core</p>
-                    </div>
-                    <div className="subforum-stats subforum-column center">
-                      <span>24 Posts | 12 Topics</span>
-                    </div>
-                    <div className="subforum-info subforum-column">
-                      <b><a href>Last post</a></b> by <a href>JustAUser</a>
-                      <br />on <small>12 Dec 2023</small>
-                    </div>
                   </div>
                 </div>
                 <div className="forum-info">

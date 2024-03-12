@@ -12,6 +12,8 @@ import Signup from "./pages/Signup";
 import Forums from "./pages/Forums";
 import Profile from "./pages/Profile";
 import Images from "./pages/Images";
+import Posts from "./pages/posts";
+import Details from "./pages/Details";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +34,14 @@ const router = createBrowserRouter([
         element: <Forums />
       },
       {
+        path: "/posts",
+        element: <Posts />
+      },
+      {
+        path: "/details",
+        element: <Details />
+      },
+      {
         path: "/login",
         element: <Login />
       },
@@ -43,7 +53,8 @@ const router = createBrowserRouter([
         // '/me'
         path: "/:username",
         element: <Profile />
-      }
+      },
+      
     ]
   }
 ]);
