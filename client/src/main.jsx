@@ -7,13 +7,10 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound.jsx";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-<<<<<<< HEAD
 import forums from "./pages/Forums";
-=======
 import Profile from "./pages/Profile";
 import Images from "./pages/Images";
 
->>>>>>> d4f92dabd91bcbdb096d6fd6cb5cbb70b64f0e48
 
 const router = createBrowserRouter([
   {
