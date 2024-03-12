@@ -27,12 +27,12 @@ const router = createBrowserRouter([
         element: <Images />
       },
       {
-        path: "/login",
-        element: <Login />
-      },
-      {
         path: "/forums",
         element: <Forums />
+      },
+      {
+        path: "/login",
+        element: <Login />
       },
       {
         path: "/signup",
