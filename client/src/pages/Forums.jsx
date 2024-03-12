@@ -1,4 +1,4 @@
-var NewComponent = React.createClass({
+const Forums = () => ({
     render: function() {
       return (
         <div>
