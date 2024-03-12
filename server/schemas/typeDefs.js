@@ -5,6 +5,24 @@ const typeDefs = `
         email: String
         password: String
         projects: [Project]!
+        socials: Socials
+        avatar: String
+        portfolio: Portfolio
+    }
+
+    type Portfolio {
+        portfolioLink: String
+        portfolioImage: String
+        portfolioLanguages: [String]
+        averagePortfolioRating: Float
+    }
+    
+    type Socials {
+        linkedinLink: String
+        githubLink: String
+        instagramLink: String
+        websiteLink: String
+        twitterLink: String
     }
 
     type Project {
@@ -34,6 +52,7 @@ const typeDefs = `
         user(username: String!): User
         projects(username: String): [Project]
         project(projectId: ID!): Project
+        me: User
     }
 
     type Mutation {
@@ -41,9 +60,16 @@ const typeDefs = `
         login(email: String!, password: String!): Auth
         
         addProject(projectLink: String!, githubLink: String!, description: String!): Project
-        addComment(projectId: ID!, commentText: String!): Project
         removeProject(projectId: ID!): Project
+
+        addComment(projectId: ID!, commentText: String!): Project
         removeComment(projectId: ID!, commentId: ID!): Project
+
+        updateSocials(linkedinLink: String, githubLink: String, instagramLink: String, websiteLink: String, twitterLink: String): User
+
+        updateAvatar(avatar: String!): User
+
+        updatePortfolio(portfolioLink: String, portfolioImage: String, portfolioLanguages: [String], averagePortfolioRating: Float): User
     }
 `;
 

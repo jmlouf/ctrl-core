@@ -1,0 +1,45 @@
+.imageContainer form {
+    width: 400px;
+    height: 300px;
+    background-color: lightgray;
+    /* border: 2px dotted royalblue; */
+    margin: auto;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+}
+
+.uploadBox {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 60px;
+}
+
+input[type='file'] {
+    display: none;
+}
+
+.form-btn {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 20px;
+}
+
+form button {
+    width: 100px;
+    margin: auto;
+    height: 30px;
+    border: none;
+    background-color: #fdbf1c;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.avatar-fit {
+    object-fit: contain;
+}

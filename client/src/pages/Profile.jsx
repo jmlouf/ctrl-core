@@ -1,7 +1,10 @@
 import { Link, Navigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
+import { Flex, Box } from "@chakra-ui/react";
 
-// Socials:
+import SocialsLinks from "../components/Socials/SocialsLinks";
+import AvatarDisplay from "../components/Avatar/AvatarDisplay";
+import PortfolioDisplay from "../components/Portfolio/PortfolioDisplay";
 
 import { QUERY_SINGLE_USER } from "../utils/queries";
 
@@ -19,14 +22,8 @@ const Profile = () => {
 
   // Assign data?.user because QUERY_SINGLE_USER is executed.
   const user = data?.user || {};
-
-  // If user is logged in and username matches logged in user's ID, redirect to '/${user?.username}'.
-  // TODO: User options.
-  if (Auth.loggedIn() && Auth.getProfile().data.username === username) {
-    // User logged in and looking at their own profile.
-    // Add edit options here?
-    // return <Navigate to={`/${user?.username}`} />;
-  }
+  const isLoggedInUser =
+    Auth.loggedIn() && Auth.getProfile().data.username === username;
 
   if (loading) {
     return <div>Loading...</div>;
@@ -42,22 +39,31 @@ const Profile = () => {
     );
   }
 
+  if (isLoggedInUser) {
+    <Navigate to={`/${Auth.getProfile().username}`} />;
+
+    return (
+      <Flex justifyContent='flex-start' m='10'>
+        <Flex flexDirection='column'>
+          <AvatarDisplay user={user} />
+          <h2>@{user.username}</h2>
+        </Flex>
+        <Flex ml={10} flexDirection='column'>
+          <Flex>
+            <SocialsLinks user={user} />
+          </Flex>
+          <Flex>
+            <PortfolioDisplay user={user} />
+          </Flex>
+        </Flex>
+      </Flex>
+    );
+  }
+
   return (
-    <main>
-      <h2>{username ? `${user.username}'s` : "Your"} socials:</h2>
-
-      {/* {user.projects?.length > 0 && (
-        <SocialsList
-          projects={user.projects}
-          isLoggedInUser={!username && true}
-        />
-      )} */}
-
-      <div>
-        {/* <SocialsForm userId={user._id} /> */}
-        Test
-      </div>
-    </main>
+    <>
+      <h2>@{user.username}'s Profile</h2>
+    </>
   );
 };
 
