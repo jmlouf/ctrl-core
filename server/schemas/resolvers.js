@@ -15,6 +15,12 @@ const resolvers = {
     },
     project: async (parent, { projectId }) => {
       return Project.findOne({ _id: projectId });
+    },
+    me: async (parent, args, context) => {
+      if (context.user) {
+        return User.findOne({ _id: context.user._id }).populate("projects");
+      }
+      throw AuthenticationError;
     }
   },
 
@@ -110,6 +116,70 @@ const resolvers = {
           },
           { new: true }
         );
+      }
+      throw AuthenticationError;
+    },
+    updateSocials: async (
+      parent,
+      { linkedinLink, githubLink, instagramLink, websiteLink, twitterLink },
+      context
+    ) => {
+      if (context.user) {
+        const updatedUserLinks = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          {
+            $set: {
+              "socials.linkedinLink": linkedinLink,
+              "socials.githubLink": githubLink,
+              "socials.instagramLink": instagramLink,
+              "socials.websiteLink": websiteLink,
+              "socials.twitterLink": twitterLink
+            }
+          },
+          { new: true }
+        );
+
+        return updatedUserLinks;
+      }
+      throw AuthenticationError;
+    },
+    updateAvatar: async (_, { avatar }, context) => {
+      if (context.user) {
+        const updatedUserAvatar = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $set: { avatar } },
+          { new: true }
+        );
+
+        return updatedUserAvatar;
+      }
+      throw AuthenticationError;
+    },
+    updatePortfolio: async (
+      parent,
+      {
+        portfolioLink,
+        portfolioImage,
+        portfolioLanguages,
+        averagePortfolioRating
+      },
+      context
+    ) => {
+      if (context.user) {
+        const updatedUserPortfolio = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          {
+            $set: {
+              "portfolio.portfolioLink": portfolioLink,
+              "portfolio.portfolioImage": portfolioImage,
+              "portfolio.portfolioLanguages": portfolioLanguages,
+              "portfolio.averagePortfolioRating": averagePortfolioRating
+            }
+          },
+          { new: true }
+        );
+
+        return updatedUserPortfolio;
       }
       throw AuthenticationError;
     }

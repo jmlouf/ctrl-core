@@ -13,6 +13,20 @@ export const QUERY_USERS = gql`
         description
         createdAt
       }
+      socials {
+        linkedinLink
+        githubLink
+        instagramLink
+        websiteLink
+        twitterLink
+      }
+      avatar
+      portfolio {
+        portfolioLink
+        portfolioImage
+        portfolioLanguages
+        averagePortfolioRating
+      }
     }
   }
 `;
@@ -29,6 +43,51 @@ export const QUERY_SINGLE_USER = gql`
         githubLink
         description
         createdAt
+      }
+      socials {
+        linkedinLink
+        githubLink
+        instagramLink
+        websiteLink
+        twitterLink
+      }
+      avatar
+      portfolio {
+        portfolioLink
+        portfolioImage
+        portfolioLanguages
+        averagePortfolioRating
+      }
+    }
+  }
+`;
+
+export const QUERY_ME = gql`
+  query me {
+    me {
+      _id
+      username
+      email
+      projects {
+        _id
+        projectLink
+        githubLink
+        description
+        createdAt
+      }
+      socials {
+        linkedinLink
+        githubLink
+        instagramLink
+        websiteLink
+        twitterLink
+      }
+      avatar
+      portfolio {
+        portfolioLink
+        portfolioImage
+        portfolioLanguages
+        averagePortfolioRating
       }
     }
   }

@@ -23,3 +23,63 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const UPDATE_SOCIALS = gql`
+  mutation updateSocials(
+    $linkedinLink: String
+    $githubLink: String
+    $instagramLink: String
+    $websiteLink: String
+    $twitterLink: String
+  ) {
+    updateSocials(
+      linkedinLink: $linkedinLink
+      githubLink: $githubLink
+      instagramLink: $instagramLink
+      websiteLink: $websiteLink
+      twitterLink: $twitterLink
+    ) {
+      _id
+      socials {
+        linkedinLink
+        githubLink
+        instagramLink
+        websiteLink
+        twitterLink
+      }
+    }
+  }
+`;
+
+export const UPDATE_AVATAR = gql`
+  mutation updateAvatar($avatar: String!) {
+    updateAvatar(avatar: $avatar) {
+      _id
+      avatar
+    }
+  }
+`;
+
+export const UPDATE_PORTFOLIO = gql`
+  mutation updatePortfolio(
+    $portfolioLink: String
+    $portfolioImage: String
+    $portfolioLanguages: [String]
+    $averagePortfolioRating: Float
+  ) {
+    updatePortfolio(
+      portfolioLink: $portfolioLink
+      portfolioImage: $portfolioImage
+      portfolioLanguages: $portfolioLanguages
+      averagePortfolioRating: $averagePortfolioRating
+    ) {
+      _id
+      portfolio {
+        portfolioLink
+        portfolioImage
+        portfolioLanguages
+        averagePortfolioRating
+      }
+    }
+  }
+`;
