@@ -34,6 +34,14 @@ const router = createBrowserRouter([
         element: <Forums />
       },
       {
+        path: "/posts",
+        element: <Posts />
+      },
+      {
+        path: "/details",
+        element: <Details />
+      },
+      {
         path: "/login",
         element: <Login />
       },
@@ -46,14 +54,7 @@ const router = createBrowserRouter([
         path: "/:username",
         element: <Profile />
       },
-      {
-        path: "/posts",
-        element: <Posts />
-      },
-      {
-        path: "/details",
-        element: <Details />
-      },
+      
     ]
   }
 ]);
