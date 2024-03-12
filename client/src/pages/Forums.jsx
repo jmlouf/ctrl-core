@@ -213,26 +213,19 @@ const Forums = () => ({
                     <br />on <small>12 Dec 2023</small>
                   </div>
                 </div>
-              </div>
-              <div className="forum-info">
-                <div className="chart">
-                  MyForum - Stats &nbsp;<i className="fa fa-bar-chart" />
+                <div className="forum-info">
+                  <div className="chart">
+                    MyForum - Stats &nbsp;<i className="fa fa-bar-chart" />
+                  </div>
+                  <span><u>5,369</u> Posts in <u>48</u> Topics by <u>8,124</u> Members.</span><br />
+                  <span>Latest post: <b><a href>Random post</a></b> on Dec 15 2023 By <a href>RandomUser</a></span>.<br />
+                  <span>Check <a href>the latest posts</a> .</span><br />
                 </div>
-                <span><u>5,369</u> Posts in <u>48</u> Topics by <u>8,124</u> Members.</span><br />
-                <span>Latest post: <b><a href>Random post</a></b> on Dec 15 2023 By <a href>RandomUser</a></span>.<br />
-                <span>Check <a href>the latest posts</a> .</span><br />
-              </div>
-              <footer>
-              </footer>
-            </div></div></div></div>
-    );
-  },
-  get render() {
-    return this._render;
-  },
-  set render(value) {
-    this._render = value;
-  },
-  });
+                <footer>
+                </footer>
+              </div></div></div></div>
+      );
+    }
+});
 
-  export default Forums;
+export default Forums;

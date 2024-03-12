@@ -127,9 +127,9 @@ h4 {
   display: grid;
 }
 
-#browse-button {
+#browse-button-label {
   margin: 1%;
-  width: 30%;
+  width: 40%;
   background-color:darkblue;
   border: azure;
   border-style: solid;
