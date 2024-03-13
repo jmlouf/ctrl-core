@@ -11,7 +11,6 @@ import {
 } from "react-icons/fa";
 import SocialsModal from "../SocialsModal";
 import { UPDATE_SOCIALS } from "../../../utils/mutations";
-import Auth from "../../../utils/auth";
 
 const SocialsLinks = ({ user }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -63,24 +62,9 @@ const SocialsLinks = ({ user }) => {
     }
   };
 
-  const isAuthenticated = Auth.loggedIn();
-  const authenticatedUser = Auth.getProfile();
-
-  const isOwner = isAuthenticated && authenticatedUser.data._id === user._id;
-
   return (
     <Flex flexDirection='column' align='left' justify='space-between'>
-      <Flex alignItems='center' m='10px' p='10px'>
-        <h2>Socials</h2>
-        {isOwner && (
-          <IconButton
-            icon={<FaEdit size={18} />}
-            variant='ghost'
-            size='lg'
-            onClick={onOpen}
-          />
-        )}
-      </Flex>
+      <h2>Socials</h2>
       <Box>
         {socialsLinks.websiteLink && (
           <Link
@@ -140,14 +124,14 @@ const SocialsLinks = ({ user }) => {
           </Link>
         )}
       </Box>
-      {isOwner && (
-        <SocialsModal
-          isOpen={isOpen}
-          onClose={onClose}
-          socialsLinks={socialsLinks}
-          onSave={handleSave}
-        />
-      )}
+      <IconButton icon={<FaEdit />} variant='ghost' onClick={onOpen} />
+
+      <SocialsModal
+        isOpen={isOpen}
+        onClose={onClose}
+        socialsLinks={socialsLinks}
+        onSave={handleSave}
+      />
     </Flex>
   );
 };

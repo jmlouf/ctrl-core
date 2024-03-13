@@ -49,8 +49,8 @@ const AvatarModal = ({ isOpen, onClose, avatarDisplay, onSave }) => {
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>Update Avatar</ModalHeader>
-        <ModalBody m={4} mb={10}>
-          <FormControl align='center'>
+        <ModalBody>
+          <FormControl>
             <Input
               type='file'
               id='uploadImage'
