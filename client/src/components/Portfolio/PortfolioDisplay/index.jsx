@@ -60,10 +60,10 @@ const PortfolioDisplay = ({ user }) => {
     }
   };
 
-  const isAuthenticated = Auth.loggedIn();
-  const authenticatedUser = Auth.getProfile();
+  // const isAuthenticated = Auth.loggedIn();
+  // const authenticatedUser = Auth.getProfile();
 
-  const isOwner = isAuthenticated && authenticatedUser.data._id === user._id;
+  const isOwner = Auth.loggedIn() && Auth.getProfile().data._id === user._id;
 
   return (
     <Flex flexDirection='column' alignItems='center'>
