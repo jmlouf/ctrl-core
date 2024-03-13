@@ -25,7 +25,6 @@ export const QUERY_USERS = gql`
         portfolioLink
         portfolioImage
         portfolioLanguages
-        averagePortfolioRating
       }
     }
   }
@@ -56,7 +55,6 @@ export const QUERY_SINGLE_USER = gql`
         portfolioLink
         portfolioImage
         portfolioLanguages
-        averagePortfolioRating
       }
     }
   }
@@ -87,7 +85,11 @@ export const QUERY_ME = gql`
         portfolioLink
         portfolioImage
         portfolioLanguages
-        averagePortfolioRating
+      }
+      portfolioRating {
+        portfolioId
+        userId
+        rating
       }
     }
   }
