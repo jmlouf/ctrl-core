@@ -12,6 +12,8 @@ import {
 import { FaEdit, FaGlobe } from "react-icons/fa";
 import PortfolioModal from "../PortfolioModal";
 import { UPDATE_PORTFOLIO } from "../../../utils/mutations";
+import Auth from "../../../utils/auth";
+import RatingSystem from "../../Rating";
 
 const PortfolioDisplay = ({ user }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -21,12 +23,10 @@ const PortfolioDisplay = ({ user }) => {
     portfolioLanguages: user.portfolio.portfolioLanguages || [""],
     averagePortfolioRating: user.portfolio.averagePortfolioRating
   });
-
   const [updatePortfolio] = useMutation(UPDATE_PORTFOLIO);
 
   const handleSave = async (addedPortfolio) => {
     console.log(addedPortfolio);
-
     try {
       const { data } = await updatePortfolio({
         variables: {
@@ -36,7 +36,6 @@ const PortfolioDisplay = ({ user }) => {
           averagePortfolioRating: addedPortfolio.averagePortfolioRating
         }
       });
-
       if (data.updatePortfolio) {
         setPortfolioDisplay({
           portfolioLink: data.updatePortfolio.portfolio.portfolioLink,
@@ -47,7 +46,7 @@ const PortfolioDisplay = ({ user }) => {
         });
       }
     } catch (error) {
-      console.error("Error updating social links:", error);
+      console.error("Error updating portfolio:", error);
     }
   };
 
@@ -61,10 +60,25 @@ const PortfolioDisplay = ({ user }) => {
     }
   };
 
+  const isAuthenticated = Auth.loggedIn();
+  const authenticatedUser = Auth.getProfile();
+
+  const isOwner = isAuthenticated && authenticatedUser.data._id === user._id;
+
   return (
-    <Flex flexDirection='column'>
-      <h2>Portfolio</h2>
-      <Box>
+    <Flex flexDirection='column' alignItems='center'>
+      <Flex alignItems='center' p='10px'>
+        <h2>Portfolio</h2>
+        {isOwner && (
+          <IconButton
+            icon={<FaEdit size={18} />}
+            variant='ghost'
+            size='lg'
+            onClick={onOpen}
+          />
+        )}
+      </Flex>
+      <Box alignItems='center'>
         {portfolioDisplay.portfolioLink && (
           <Link
             href={
@@ -74,38 +88,54 @@ const PortfolioDisplay = ({ user }) => {
             }
             target='_blank'
           >
-            <IconButton icon={<FaGlobe />} variant='ghost' />
+            <IconButton icon={<FaGlobe size={18} />} variant='ghost' />
             {portfolioDisplay.portfolioLink}
           </Link>
         )}
       </Box>
-      <Box>
-        {portfolioDisplay.portfolioImage && (
+      <Box alignItems='center'>
+        {portfolioDisplay.portfolioImage ? (
           <Image
-            src={`data:image/jpeg;base64,${user.portfolio.portfolioImage}`}
-            alt='Portfolio Image'
+            src={portfolioDisplay.portfolioImage}
+            alt='User Portfolio'
+            boxSize='200px'
+            objectFit='cover'
           />
+        ) : (
+          <Box
+            boxSize='200px'
+            bg='gray.200'
+            display='flex'
+            alignItems='center'
+            justifyContent='center'
+            fontSize='4xl'
+            color='gray.500'
+          >
+            {user.username.charAt(0).toUpperCase()}
+          </Box>
         )}
       </Box>
-      <Box>
-        <h3>Programming Languages</h3>
+      <Box align='center'>
+        <h3>Languages Used</h3>
         {portfolioDisplay.portfolioLanguages.map((language, index) => (
           <Badge key={index} mr='1' colorScheme='blue'>
             {language}
           </Badge>
         ))}
       </Box>
-      <Box>
-        <h3>Rating</h3>
-        <span>{portfolioDisplay.averagePortfolioRating}</span>
+      <Box align='center'>
+        <Flex alignItems='center'>
+          <RatingSystem user={user} />
+        </Flex>
       </Box>
-      <PortfolioModal
-        isOpen={isOpen}
-        onClose={onClose}
-        portfolioDisplay={portfolioDisplay}
-        onSave={handleSave}
-      />
-      <IconButton icon={<FaEdit />} variant='ghost' onClick={onOpen} />
+      {isOwner && (
+        <PortfolioModal
+          isOpen={isOpen}
+          onClose={onClose}
+          portfolioDisplay={portfolioDisplay}
+          onSave={handleSave}
+        />
+      )}
     </Flex>
   );
 };

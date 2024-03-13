@@ -10,7 +10,7 @@ class AuthService {
   loggedIn() {
     // Checks if user is logged in via token existence and its expiration.
     const token = this.getToken();
-    return !!token && !this.isTokenExpired(token);
+    return token && !this.isTokenExpired(token) ? true : false;
   }
 
   // Checks if token is expired.
@@ -45,7 +45,7 @@ class AuthService {
     // Clear user token and profile data from localStorage.
     localStorage.removeItem("id_token");
     // Reload page and reset the state of the application.
-    window.location.assign("/");
+    window.location.reload();
   }
 }
 

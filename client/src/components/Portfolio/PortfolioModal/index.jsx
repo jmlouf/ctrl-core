@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { MdCloudUpload } from "react-icons/md";
 import {
   Modal,
   ModalOverlay,
@@ -13,7 +14,6 @@ import {
   Button
 } from "@chakra-ui/react";
 import { Select } from "chakra-react-select";
-import { Rating } from "react-simple-star-rating";
 
 const programmingLanguages = [
   { value: "javascript", label: "JavaScript" },
@@ -30,6 +30,27 @@ const programmingLanguages = [
 
 const PortfolioModal = ({ isOpen, onClose, portfolioDisplay, onSave }) => {
   const [addedPortfolio, setAddedPortfolio] = useState(portfolioDisplay);
+  const fileInputRef = useRef(null);
+
+  const handleUploadImage = async (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        if (reader.readyState === 2) {
+          setAddedAvatar({ avatar: reader.result });
+        }
+      };
+      reader.onerror = (error) => {
+        console.error("Error reading file:", error);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleUploadClick = () => {
+    fileInputRef.current.click();
+  };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -52,20 +73,13 @@ const PortfolioModal = ({ isOpen, onClose, portfolioDisplay, onSave }) => {
     }));
   };
 
-  const handleAveragePortfolioRating = (rate) => {
-    setAddedPortfolio((prevPortfolio) => ({
-      ...prevPortfolio,
-      averagePortfolioRating: rate
-    }));
-  };
-
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>Update Portfolio</ModalHeader>
         <ModalBody>
-          <FormControl mt={4}>
+          <FormControl m={4} mb={10}>
             <FormLabel>Portfolio Link</FormLabel>
             <Input
               name='portfolioLink'
@@ -73,12 +87,32 @@ const PortfolioModal = ({ isOpen, onClose, portfolioDisplay, onSave }) => {
               onChange={handleChange}
             />
           </FormControl>
-          <FormControl>
+          <FormControl m={4} mb={10} align='center'>
             <FormLabel>Portfolio Image</FormLabel>
-            <Input type='file' name='websiteImage' onChange={handleChange} />
+            <Input
+              type='file'
+              id='uploadImage'
+              className='uploadBox'
+              onChange={handleUploadImage}
+              ref={fileInputRef}
+              display='none'
+            />
+            {addedPortfolio.portfolioImage ? (
+              <Image
+                src={addedPortfolio.portfolioImage}
+                alt='User Portfolio'
+                boxSize='150px'
+                objectFit='cover'
+              />
+            ) : (
+              <MdCloudUpload />
+            )}
+            <Button colorScheme='yellow' onClick={handleUploadClick}>
+              Select Image
+            </Button>
           </FormControl>
-          <FormControl>
-            <FormLabel>Programming Languages</FormLabel>
+          <FormControl m={4} mb={10}>
+            <FormLabel>Languages Used</FormLabel>
             <Select
               isMulti
               name='portfolioLanguages'
@@ -87,19 +121,6 @@ const PortfolioModal = ({ isOpen, onClose, portfolioDisplay, onSave }) => {
                 addedPortfolio.portfolioLanguages.includes(option.value)
               )}
               onChange={handlePortfolioLanguages}
-            />
-          </FormControl>
-          <FormControl>
-            <FormLabel>Rating</FormLabel>
-            <Rating
-              initialValue={addedPortfolio.averagePortfolioRating || 0}
-              onClick={handleAveragePortfolioRating}
-              size={25}
-              SVGstyle={{ display: "inline" }}
-              transition
-              fillColor='orange'
-              emptyColor='gray.200'
-              allowFraction='true'
             />
           </FormControl>
         </ModalBody>

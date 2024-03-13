@@ -61,12 +61,14 @@ const userSchema = new Schema({
       type: String,
       default: ""
     },
-    portfolioLanguages: [String],
-    averagePortfolioRating: {
-      type: Number,
-      default: 0
+    portfolioLanguages: [String]
+  },
+  portfolioRating: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "PortfolioRating"
     }
-  }
+  ]
 });
 
 userSchema.pre("save", async function (next) {

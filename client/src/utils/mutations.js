@@ -83,3 +83,14 @@ export const UPDATE_PORTFOLIO = gql`
     }
   }
 `;
+
+export const UPDATE_PORTFOLIO_RATING = gql`
+  mutation updatePortfolioRating($userId: ID!, $rating: Float!) {
+    updatePortfolioRating(userId: $userId, rating: $rating) {
+      _id
+      portfolio {
+        averagePortfolioRating
+      }
+    }
+  }
+`;

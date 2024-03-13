@@ -182,6 +182,34 @@ const resolvers = {
         return updatedUserPortfolio;
       }
       throw AuthenticationError;
+    },
+    updatePortfolioRating: async (_, { userId, rating }, context) => {
+      if (context.user) {
+        // Create a new PortfolioRating document
+        const newRating = new PortfolioRating({
+          portfolioId: userId,
+          userId: context.user._id,
+          rating
+        });
+        await newRating.save();
+
+        // Calculate the average rating
+        const ratings = await PortfolioRating.find({ portfolioId: userId });
+        const totalRating = ratings.reduce(
+          (sum, rating) => sum + rating.rating,
+          0
+        );
+        const averageRating = totalRating / ratings.length;
+
+        // Update the user's portfolio with the new average rating
+        await User.findOneAndUpdate(
+          { _id: userId },
+          { $set: { "portfolio.averagePortfolioRating": averageRating } }
+        );
+
+        return newRating;
+      }
+      throw AuthenticationError;
     }
   }
 };
