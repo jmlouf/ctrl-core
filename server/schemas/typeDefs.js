@@ -8,14 +8,6 @@ const typeDefs = `
         socials: Socials
         avatar: String
         portfolio: Portfolio
-        portfolioRating: [PortfolioRating]
-    }
-
-    type PortfolioRating {
-        _id: ID
-        portfolioId: ID
-        userId: ID
-        rating: Float
     }
 
     type Portfolio {
@@ -77,7 +69,6 @@ const typeDefs = `
 
         updateAvatar(avatar: String!): User
 
-        updatePortfolioRating(userId: ID!, rating: Float!): User
         updatePortfolio(portfolioLink: String, portfolioImage: String, portfolioLanguages: [String], averagePortfolioRating: Float): User
     }
 `;

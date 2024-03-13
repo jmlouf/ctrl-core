@@ -31,7 +31,7 @@ const SocialsModal = ({ isOpen, onClose, socialsLinks, onSave }) => {
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>Update Socials</ModalHeader>
-        <ModalBody m={4} mb={10}>
+        <ModalBody>
           <FormControl mt={4}>
             <FormLabel>Website</FormLabel>
             <Input

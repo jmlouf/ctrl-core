@@ -2,7 +2,7 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 import { SimpleGrid } from "@chakra-ui/react";
 import { QUERY_USERS } from "../utils/queries";
-import PortfolioDisplay from "../components/Portfolio/PortfolioDisplay";
+import PortfolioCard from "../components/Portfolio/PortfolioCard";
 
 const Home = () => {
   const { loading, error, data } = useQuery(QUERY_USERS);
@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <SimpleGrid columns={[1, 2, 3]} spacing='40px'>
       {data.users.map((user) => (
-        <PortfolioDisplay key={user._id} user={user} />
+        <PortfolioCard key={user._id} user={user} />
       ))}
     </SimpleGrid>
   );
