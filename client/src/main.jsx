@@ -26,30 +26,29 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: "images",
+        path: "/images",
         element: <Images />
       },
       {
-        path: "login",
+        path: "/login",
         element: <Login />
       },
       {
-        path: "signup",
+        path: "/signup",
         element: <Signup />
       },
       {
         // '/me'
-        path: ":username",
+        path: "/:username",
         element: <Profile />
-      }
+      },
+      
     ]
   }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <ChakraProvider>
-      <RouterProvider router={router} />
-    </ChakraProvider>
-  </React.StrictMode>
+  <ChakraProvider>
+    <RouterProvider router={router} />
+  </ChakraProvider>
 );

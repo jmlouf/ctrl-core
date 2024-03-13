@@ -61,8 +61,6 @@ const PortfolioDisplay = ({ user }) => {
     }
   };
 
-  const isOwner = Auth.loggedIn() && Auth.getProfile().data._id === user._id;
-
   return (
     <Flex flexDirection='column'>
       <h2>Portfolio</h2>
