@@ -4,7 +4,6 @@ import { Box, IconButton, useDisclosure, Image } from "@chakra-ui/react";
 import { FaEdit } from "react-icons/fa";
 import AvatarModal from "../AvatarModal";
 import { UPDATE_AVATAR } from "../../../utils/mutations";
-import Auth from "../../../utils/auth";
 
 const AvatarDisplay = ({ user }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -25,22 +24,8 @@ const AvatarDisplay = ({ user }) => {
     }
   };
 
-  const isAuthenticated = Auth.loggedIn();
-  const authenticatedUser = Auth.getProfile();
-
-  const isOwner = isAuthenticated && authenticatedUser.data._id === user._id;
-
   return (
     <Box className='imageContainer'>
-      {isOwner && (
-        <IconButton
-          icon={<FaEdit size={18} />}
-          m='10px'
-          variant='ghost'
-          size='lg'
-          onClick={onOpen}
-        />
-      )}
       <Box align='center' justify='space-between'>
         {avatarDisplay.avatar ? (
           <Image
@@ -65,14 +50,13 @@ const AvatarDisplay = ({ user }) => {
           </Box>
         )}
       </Box>
-      {isOwner && (
-        <AvatarModal
-          isOpen={isOpen}
-          onClose={onClose}
-          avatarDisplay={avatarDisplay}
-          onSave={handleSave}
-        />
-      )}
+      <IconButton icon={<FaEdit />} variant='ghost' onClick={onOpen} />
+      <AvatarModal
+        isOpen={isOpen}
+        onClose={onClose}
+        avatarDisplay={avatarDisplay}
+        onSave={handleSave}
+      />
     </Box>
   );
 };
