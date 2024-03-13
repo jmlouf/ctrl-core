@@ -43,16 +43,18 @@ const Profile = () => {
     <Navigate to={`/${Auth.getProfile().username}`} />;
 
     return (
-      <Flex justifyContent='space-around' alignItems='center' m='10'>
+      <Flex justifyContent='flex-start' m='10'>
         <Flex flexDirection='column'>
           <AvatarDisplay user={user} />
           <h2>@{user.username}</h2>
         </Flex>
-        <Flex flexDirection='column'>
-          <PortfolioDisplay user={user} />
-        </Flex>
-        <Flex flexDirection='column'>
-          <SocialsLinks user={user} />
+        <Flex ml={10} flexDirection='column'>
+          <Flex>
+            <SocialsLinks user={user} />
+          </Flex>
+          <Flex>
+            <PortfolioDisplay user={user} />
+          </Flex>
         </Flex>
       </Flex>
     );
@@ -61,7 +63,6 @@ const Profile = () => {
   return (
     <>
       <h2>@{user.username}'s Profile</h2>
-      <p>To view this profile, please login or signup!</p>
     </>
   );
 };
